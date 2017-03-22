@@ -14,7 +14,7 @@ export class AboutPage {
 
     var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
     var today = new Date();
-    var secondDate = new Date(2017,5,17);
+    var secondDate = new Date(2017,4,17);
 
     this.ttl = Math.round(Math.abs((today.getTime() - secondDate.getTime())/(oneDay)));
   }

@@ -4,10 +4,10 @@ import {PeopleService} from '../../providers/people-service';
 
 @Component({
   providers: [PeopleService],
-  selector: 'page-contact',
-  templateUrl: 'contact.html'
+  selector: 'page-speech',
+  templateUrl: 'speech.html'
 })
-export class ContactPage {
+export class SpeechPage {
 
   public people: any;
 
