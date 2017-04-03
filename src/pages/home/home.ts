@@ -18,7 +18,7 @@ export class HomePage {
   public inputBlue: AbstractControl;
 
   constructor(public navCtrl: NavController, public formBuilder: FormBuilder, public rgbtohex: RGBtoHEXProvider) {
-    this.colorForm = formBuilder.group({inputRed: [''], inputGreen: [''], inputBlue: ['']});
+    this.colorForm = formBuilder.group({inputRed: ['0'], inputGreen: ['0'], inputBlue: ['0']});
     this.inputRed = this.colorForm.controls['inputRed'];
     this.inputGreen = this.colorForm.controls['inputGreen'];
     this.inputBlue = this.colorForm.controls['inputBlue'];
@@ -32,6 +32,4 @@ export class HomePage {
         this.colorSet = data;
       });
   }
-
-
 }

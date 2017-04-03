@@ -10,7 +10,6 @@
   <form [formGroup]="colorForm">
     <ion-list>
       <ion-label>ROT-Wert: {{inputRed.value}}</ion-label>
-      <!--<ion-badge color="danger" item-left>{{inputRed.value}}</ion-badge>-->
       <ion-item>
         <ion-range pin="true" min="0" max="255" formControlName="inputRed" color="danger">
           <ion-label range-left>0</ion-label>
@@ -19,7 +18,6 @@
       </ion-item>
 
       <ion-label>GRÜN-Wert: {{inputGreen.value}}</ion-label>
-      <!--<ion-badge color="secondary" item-left>{{inputGreen.value}}</ion-badge>-->
       <ion-item>
         <ion-range pin="true" min="0" max="255" formControlName="inputGreen" color="secondary">
           <ion-label range-left>0</ion-label>
@@ -40,6 +38,6 @@
 
   <button ion-button round (click)="setColor()">Setzen der Farbwerte</button>
 
-
-  <ion-label>{{colorSet}}</ion-label>
+  <ion-textarea [ngStyle]="{'background-color':  colorSet, 'border-style': solid}" disabled></ion-textarea>
+  <ion-label>Folgender HEX-Code wird oben dargestellt: {{colorSet}}</ion-label>
 </ion-content>
