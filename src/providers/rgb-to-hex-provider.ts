@@ -25,7 +25,7 @@ export class RGBtoHEXProvider {
     this.blue = blue;
   }
 
-  load() {
+  getHEX() {
     return new Promise(resolve => {
       // We're using Angular HTTP provider to request the data,
       // then on the response, it'll map the JSON data to a parsed JS object.

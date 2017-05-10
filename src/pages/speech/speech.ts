@@ -33,7 +33,7 @@ export class SpeechPage {
       });
   }
 
-  async doSomething(): Promise<any> {
+  async speakText(): Promise<any> {
     try {
       this.ttsOptions = {
         text: this.ttsText,

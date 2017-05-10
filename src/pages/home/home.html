@@ -11,7 +11,7 @@
     <ion-list>
       <ion-label>ROT-Wert: {{inputRed.value}}</ion-label>
       <ion-item>
-        <ion-range pin="true" min="0" max="255" formControlName="inputRed" color="danger">
+        <ion-range pin="true" min="0" max="255" formControlName="inputRed" color="danger" (ionChange)="checkColor()">
           <ion-label range-left>0</ion-label>
           <ion-label range-right>255</ion-label>
         </ion-range>
@@ -19,7 +19,7 @@
 
       <ion-label>GRÜN-Wert: {{inputGreen.value}}</ion-label>
       <ion-item>
-        <ion-range pin="true" min="0" max="255" formControlName="inputGreen" color="secondary">
+        <ion-range pin="true" min="0" max="255" formControlName="inputGreen" color="secondary" (ionChange)="checkColor()">
           <ion-label range-left>0</ion-label>
           <ion-label range-right>255</ion-label>
         </ion-range>
@@ -27,17 +27,17 @@
 
       <ion-label>BLAU-Wert: {{inputBlue.value}}</ion-label>
       <ion-item>
-        <ion-range pin="true" min="0" max="255" formControlName="inputBlue" color="primary">
+        <ion-range pin="true" min="0" max="255" formControlName="inputBlue" color="primary" (ionChange)="checkColor()">
           <ion-label range-left>0</ion-label>
           <ion-label range-right>255</ion-label>
         </ion-range>
       </ion-item>
-
     </ion-list>
   </form>
 
-  <button ion-button round (click)="setColor()">Setzen der Farbwerte</button>
-
+  <ion-label>Obiger RGB-Code sieht folgendermaßen aus: {{colorSet}}</ion-label>
   <ion-textarea [ngStyle]="{'background-color':  colorSet, 'border-style': solid}" disabled></ion-textarea>
-  <ion-label>Folgender HEX-Code wird oben dargestellt: {{colorSet}}</ion-label>
+
+  <button ion-button round (click)="sendColorToLightbulb()">Senden der Farbe</button>
+
 </ion-content>

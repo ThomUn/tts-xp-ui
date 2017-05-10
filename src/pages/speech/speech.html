@@ -9,31 +9,33 @@
 <ion-content>
   <ion-item>
     <ion-label stacked>Text</ion-label>
-    <ion-textarea rows="4" [(ngModel)]="ttsText"></ion-textarea>
+    <ion-textarea rows="1" [(ngModel)]="ttsText"></ion-textarea>
   </ion-item>
-  <button clear ion-button (click)="doSomething()">Text to speech</button>
+  <button clear ion-button (click)="speakText()">Text to speech</button>
 
   <br/>
-  <br/>
-  -----
-  <br/>
-  <br/>
-  <button ion-button (click)="isSpeechSupported()">Is Speech Recognition Supported</button><br/>
+
+  <button ion-button (click)="isSpeechSupported()">Is Speech Recognition Supported</button>
+  <ion-img src="http://clipart-library.com/images/8iE7qe8ia.png" height="35" width="35" hidden="{{!isSupported}}"></ion-img><br/>
+
   <button ion-button (click)="getPermission()">Get Permission</button><br/>
-  <button ion-button (click)="hasPermission()">Has Permission?</button><br/>
+
+  <button ion-button (click)="hasPermission()">Has Permission?</button>
+  <ion-img src="http://clipart-library.com/images/8iE7qe8ia.png" height="35" width="35" hidden="{{!isSupported}}"></ion-img><br/>
+
   <button ion-button (click)="getSupportedLanguages()">Get Supported Languages</button><br/>
   <button ion-button (click)="listenForSpeech()">Listen for Speech</button>
 
-  <ion-label>Is supported: {{isSupported}}</ion-label>
+  <!--<ion-label>Is supported: {{isSupported}}</ion-label>
   <ion-label>Has permission: {{hasPermissionText}}</ion-label><br/>
   <ion-item-group *ngFor="let language of getSupportedLanguagesArray">
     <ion-item>{{language}}</ion-item>
-  </ion-item-group><br/>
-  <!--<ion-card>
+  </ion-item-group><br/>-->
+  <ion-card>
     <ion-card-content *ngFor="let language of getSupportedLanguagesArray">
       <p>{{language}}</p>
     </ion-card-content>
-  </ion-card>-->
+  </ion-card>
   <ion-card>
     <ion-card-content *ngFor="let speech of speechtext">
       <p>{{speech}}</p>
