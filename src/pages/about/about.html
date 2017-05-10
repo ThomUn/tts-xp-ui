@@ -1,27 +1,65 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Einstellungen
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <p>Thanks for using this application!</p>
+  <!--<p>Thanks for using this application!</p>-->
   <p>
-    <label>Author of this application:</label>
+    <label>Autor dieser Applikation:</label>
     <label>Thomas Unger</label>
   </p>
   <p>
-    <label>Name of this application:</label>
+    <label>Name dieser Applikation:</label>
     <label>TTS XP Home Automation</label>
   </p>
-  <p>
-    <label>Finish date:</label>
-    <label>17. May 2017 (Days to finish: {{ttl}})</label>
-  </p>
+  <!--<p>-->
+  <!--<label>Finish date:</label>-->
+  <!--<label>17. May 2017 (Days to finish: {{ttl}})</label>-->
+  <!--</p>-->
   <img
-    src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=TTS+XP+Home+Automation%0AAuthor%3A+Thomas+Unger%2C+ic15b051%0A2017-05-17&amp;qzone=1&amp;margin=0&amp;size=200x200&amp;ecc=L"
+    src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=TTS+XP+Home+Automation%0AAuthor%3A+Thomas+Unger%2C+ic15b051%0A2017-05-17&amp;qzone=1&amp;margin=0&amp;size=150x150&amp;ecc=L"
     alt="qr code"/>
+  <hr>
+
+  <ion-row>
+    <ion-col width-100 style="text-align: center">
+      <button clear ion-button (click)="isSpeechSupported()">Spracherkennung unterstützt? <img id="supportedCheck"
+                                                                                         src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/check-1-icon.png"
+                                                                                         height="35" width="35"
+      ></button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col width-100 style="text-align: center">
+      <button clear ion-button (click)="hasPermission()">Erlaubnis vorhanden? <img id="permissionCheck"
+                                                                             src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/128/check-1-icon.png"
+                                                                             height="35" width="35">
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col width-100 style="text-align: center">
+      <button ion-button (click)="getPermission()">Erlaubnis einholen!</button>
+      <br/>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col width-100 style="text-align: center">
+      <button ion-button (click)="getSupportedLanguages()">Unterstützte Locale's</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-card>
+    <ion-card-content *ngFor="let language of getSupportedLanguagesArray">
+      <p>{{language}}</p>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

@@ -1,48 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Befehl-Spracheingabe
+      Manuelle Befehl-Eingabe
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-row>
-    <ion-col width-100 style="text-align: center">
-      <button clear ion-button (click)="listenForSpeech()">Icon antippen und sprechen! <img height="35" width="35"
-                                                                                            src="http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Microphone-icon.png">
-      </button>
-    </ion-col>
-  </ion-row>
-
   <ion-item>
-    <ion-label style="color: black">Der gesprochene Befehl:</ion-label>
-    <ion-textarea style="color: black" rows="4" [(ngModel)]="serverRequestText"></ion-textarea>
+    <ion-label style="color: black">Manuell Befehl eingeben:</ion-label>
+    <ion-textarea style="color: black" rows="4" [(ngModel)]="ttsText"></ion-textarea>
   </ion-item>
-
   <ion-row>
     <ion-col width-100 style="text-align: center">
       <button clear ion-button (click)="speakText()">Befehl anhören!<img height="35" width="35"
-                                                                         src="http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Sound-Music-icon.png"></button>
+                                                                               src="http://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Sound-Music-icon.png">
+      </button>
     </ion-col>
   </ion-row>
+  <ion-row>
+    <ion-col width-100 style="text-align: center">
+      <button ion-button>Befehl zum Server senden!</button>
+    </ion-col>
+  </ion-row>
+  <br/>
 
   <ion-item>
     <ion-label style="color: black">Server-Response:</ion-label>
     <ion-textarea style="color: black" disabled="true" rows="4" [(ngModel)]="serverResponseText"></ion-textarea>
   </ion-item>
+
   <!--<ion-label>Is supported: {{isSupported}}</ion-label>
   <ion-label>Has permission: {{hasPermissionText}}</ion-label><br/>
   <ion-item-group *ngFor="let language of getSupportedLanguagesArray">
     <ion-item>{{language}}</ion-item>
   </ion-item-group><br/>-->
-
-  <ion-card>
-    <ion-card-content *ngFor="let speech of speechtext">
-      <p>{{speech}}</p>
-    </ion-card-content>
-  </ion-card>
-
   <!--<ion-list>
     <ion-list-header>Follow us on Twitter</ion-list-header>
     <ion-item>
