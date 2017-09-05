@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {PeopleService} from '../../providers/people-service';
 import {TextToSpeech} from '@ionic-native/text-to-speech'
-import {SpeechRecognition} from '@ionic-native/speech-recognition'
+import {SpeechRecognition} from '@ionic-native/speech-recognition';
 
 @Component({
   providers: [PeopleService],

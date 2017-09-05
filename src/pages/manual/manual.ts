@@ -20,16 +20,10 @@ export class ManualPage {
 
   ttsOptions: any;
 
-  constructor(public navCtrl: NavController, public peopleService: PeopleService, private tts: TextToSpeech, private speech: SpeechRecognition) {
-    this.loadPeople();
+  constructor(private tts: TextToSpeech) {
+  [...]
   }
 
-  loadPeople() {
-    this.peopleService.load()
-      .then(data => {
-        this.people = data;
-      });
-  }
 
   async speakText(): Promise<any> {
     try {
@@ -38,16 +32,15 @@ export class ManualPage {
         locale: 'de-DE'
       };
       await this.tts.speak(this.ttsOptions);
-      console.log('Successfully spoke: ' + this.ttsText);
     } catch (e) {
       console.log('error');
     }
   }
 
-  listenForSpeech(): void {
-    this.speech.startListening()
-      .subscribe(data => this.speechtext = data,
-        error => console.log('error: ' + error))
-  }
+  // listenForSpeech(): void {
+  //   this.speech.startListening()
+  //     .subscribe(data => this.speechtext = data,
+  //       error => console.log('error: ' + error))
+  // }
 
 }

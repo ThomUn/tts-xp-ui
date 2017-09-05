@@ -5,8 +5,6 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to TTS XP Home Automation!</h2>
-
   <form [formGroup]="colorForm">
     <ion-list>
       <ion-item>
@@ -16,7 +14,6 @@
           <ion-label range-right>255</ion-label>
         </ion-range>
       </ion-item>
-
       <ion-item>
         <ion-label stacked>GRÜN-Wert: {{inputGreen.value}}</ion-label>
         <ion-range pin="true" min="0" max="255" formControlName="inputGreen" color="secondary" (ionChange)="checkColor()">
@@ -24,7 +21,6 @@
           <ion-label range-right>255</ion-label>
         </ion-range>
       </ion-item>
-
       <ion-item>
         <ion-label stacked>BLAU-Wert: {{inputBlue.value}}</ion-label>
         <ion-range pin="true" min="0" max="255" formControlName="inputBlue" color="primary" (ionChange)="checkColor()">
